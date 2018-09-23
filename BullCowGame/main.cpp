@@ -10,7 +10,11 @@ string GetGuessAndPrintBack();
 int main()
 {
 	PrintIntro();
-	GetGuessAndPrintBack();
+
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int count = 0; count < NUMBER_OF_TURNS; count++) {
+		GetGuessAndPrintBack();
+	}
 	system("pause");
 	return 0;
 }
@@ -23,14 +27,14 @@ void PrintIntro()
 		<< "Welcome to Bulls and Cows, a fun word game.\n"
 		<< "Try to guess the "
 		<< WORD_LENGTH
-		<< " letter isogram!\n"
-		<< "Enter your guess: ";
+		<< " letter isogram!\n";
 	return;
 }
 
 // Implementation of get player guess
 string GetGuessAndPrintBack()
 {
+	cout << "Enter your guess: ";
 	string Guess = "";
 	getline(cin, Guess);
 	// print player guess
