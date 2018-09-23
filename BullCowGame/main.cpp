@@ -3,25 +3,40 @@
 
 using namespace std;
 
+void PrintIntro();
+string GetGuessAndPrintBack();
+
+// Application starting point
 int main()
 {
-	constexpr int WORD_LENGTH = 5;
-	string Guess = "";
-	cout 
+	PrintIntro();
+	GetGuessAndPrintBack();
+	system("pause");
+	return 0;
+}
+
+// Implementation of introduce game
+void PrintIntro()
+{
+	constexpr int WORD_LENGTH = 9;
+	cout
 		<< "Welcome to Bulls and Cows, a fun word game.\n"
 		<< "Try to guess the "
 		<< WORD_LENGTH
-		<< " letter isogram!\n";
+		<< " letter isogram!\n"
+		<< "Enter your guess: ";
+	return;
+}
 
-	// get player guess
-	cin >> Guess;
-
-	// repeat player guess
-	cout 
-		<<"You guessed: "
-		<< Guess 
+// Implementation of get player guess
+string GetGuessAndPrintBack()
+{
+	string Guess = "";
+	getline(cin, Guess);
+	// print player guess
+	cout
+		<< "You guessed: "
+		<< Guess
 		<< endl;
-
-	system("pause");
-	return 0;
+	return Guess;
 }
