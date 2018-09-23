@@ -5,18 +5,16 @@ using namespace std;
 
 void PrintIntro();
 string GetGuessAndPrintBack();
+void PlayGame();
 
 // Application starting point
 int main()
 {
 	PrintIntro();
+	PlayGame();
 
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int count = 0; count < NUMBER_OF_TURNS; count++) {
-		GetGuessAndPrintBack();
-	}
-	system("pause");
-	return 0;
+
+	return 0; // exit application
 }
 
 // Implementation of introduce game
@@ -29,6 +27,16 @@ void PrintIntro()
 		<< WORD_LENGTH
 		<< " letter isogram!\n";
 	return;
+}
+
+void PlayGame()
+{
+	// Implementation of the game
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int count = 0; count < NUMBER_OF_TURNS; count++) {
+		GetGuessAndPrintBack();
+		cout << "________________________________\n";
+	}
 }
 
 // Implementation of get player guess
