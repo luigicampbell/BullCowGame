@@ -4,16 +4,15 @@
 using namespace std;
 
 void PrintIntro();
-string GetGuessAndPrintBack();
 void PlayGame();
+string GetGuess();
+
 
 // Application starting point
 int main()
 {
 	PrintIntro();
 	PlayGame();
-
-
 	return 0; // exit application
 }
 
@@ -34,21 +33,22 @@ void PlayGame()
 	// Implementation of the game
 	constexpr int NUMBER_OF_TURNS = 5;
 	for (int count = 0; count < NUMBER_OF_TURNS; count++) {
-		GetGuessAndPrintBack();
+		string Guess = GetGuess();
 		cout << "________________________________\n";
+		cout
+			<< "You guessed: "
+			<< Guess
+			<< endl;
 	}
+	return;
 }
 
 // Implementation of get player guess
-string GetGuessAndPrintBack()
+string GetGuess()
 {
 	cout << "Enter your guess: ";
 	string Guess = "";
 	getline(cin, Guess);
-	// print player guess
-	cout
-		<< "You guessed: "
-		<< Guess
-		<< endl;
 	return Guess;
 }
+
