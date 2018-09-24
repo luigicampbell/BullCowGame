@@ -6,6 +6,7 @@ using namespace std;
 void PrintIntro();
 void PlayGame();
 string GetGuess();
+bool PlayAgain();
 
 
 // Application starting point
@@ -13,6 +14,8 @@ int main()
 {
 	PrintIntro();
 	PlayGame();
+	cout << PlayAgain();
+	system("pause");
 	return 0; // exit application
 }
 
@@ -52,3 +55,10 @@ string GetGuess()
 	return Guess;
 }
 
+bool PlayAgain()
+{
+	cout << "Enter 'Y' for Yes or press any other key to quit... ";
+	char choice;
+	cin >> choice;
+	return (choice == 'y' || choice == 'Y') == true ? true : false;
+}
