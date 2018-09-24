@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <FBullCowGame.h>
 
 using namespace std;
 
@@ -8,14 +9,18 @@ void PlayGame();
 string GetGuess();
 bool PlayAgain();
 
-
 // Application starting point
 int main()
 {
-	PrintIntro();
-	PlayGame();
-	cout << PlayAgain();
-	system("pause");
+	bool bPlayAgain = false;
+	do
+	{
+		PrintIntro();
+		PlayGame();
+		bPlayAgain = PlayAgain();
+	}
+	while (bPlayAgain);
+
 	return 0; // exit application
 }
 
@@ -35,7 +40,8 @@ void PlayGame()
 {
 	// Implementation of the game
 	constexpr int NUMBER_OF_TURNS = 5;
-	for (int count = 0; count < NUMBER_OF_TURNS; count++) {
+	for (int count = 1; count <= NUMBER_OF_TURNS; count++) 
+	{
 		string Guess = GetGuess();
 		cout << "________________________________\n";
 		cout
@@ -58,7 +64,6 @@ string GetGuess()
 bool PlayAgain()
 {
 	cout << "Enter 'Y' for Yes or press any other key to quit... ";
-	char choice;
-	cin >> choice;
+	char choice getline(cin,)
 	return (choice == 'y' || choice == 'Y') == true ? true : false;
 }
