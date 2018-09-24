@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <FBullCowGame.h>
+// #include <FBullCowGame.h>
 
 // using namespace std; best practices?
 
@@ -47,7 +47,7 @@ void PlayGame()
 		std::cout
 			<< "You guessed: "
 			<< Guess
-			<< endl;
+			<< std::endl;
 	}
 	return;
 }
@@ -57,13 +57,14 @@ std::string GetGuess()
 {
 	std::cout << "Enter your guess: ";
 	std::string Guess = "";
-	getline(cin, Guess);
+	std::getline(std::cin, Guess);
 	return Guess;
 }
 
 bool PlayAgain()
 {
 	std::cout << "Enter 'Y' for Yes or press any other key to quit... ";
-	char choice getline(cin,)
-	return (choice == 'y' || choice == 'Y') == true ? true : false;
+	std::string Choice = "";
+	std::getline(std::cin, Choice);
+	return (Choice[0] == 'y' || Choice[0] == 'Y') == true ? true : false;
 }
