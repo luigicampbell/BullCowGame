@@ -3,7 +3,7 @@
 class FBullCowGame
 {
 public:
-	void Reset(); // TODO return rich return value
+	void Reset(); // TODO return rich return value create definition file
 	int GetMaxTries();
 	int GetCurrentTry();
 	bool IsGameWon();
