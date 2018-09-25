@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-// #include <FBullCowGame.h>
+#include "FBullCowGame.h"
 
 // using namespace std; best practices?
 
@@ -10,7 +10,8 @@ std::string GetGuess();
 bool PlayAgain();
 
 // Application starting point
-int main()
+
+int main()//something
 {
 	bool bPlayAgain = false;
 	do
@@ -18,8 +19,7 @@ int main()
 		PrintIntro();
 		PlayGame();
 		bPlayAgain = PlayAgain();
-	}
-	while (bPlayAgain);
+	} while (bPlayAgain);
 
 	return 0; // exit application
 }
@@ -39,8 +39,10 @@ void PrintIntro()
 void PlayGame()
 {
 	// Implementation of the game
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int count = 1; count <= NUMBER_OF_TURNS; count++) 
+	FBullCowGame BCGame;
+	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
+							
+	for (int count = 1; count <= 5; count++)
 	{
 		std::string Guess = GetGuess();
 		std::cout << "________________________________\n";
