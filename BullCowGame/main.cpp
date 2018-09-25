@@ -39,6 +39,7 @@ void PrintIntro()
 void PlayGame()
 {
 	// Implementation of the game
+	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
 							
 	for (int count = 1; count <= MaxTries; count++)

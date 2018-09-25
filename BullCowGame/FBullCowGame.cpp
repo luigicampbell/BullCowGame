@@ -1,7 +1,17 @@
 #include "FBullCowGame.h"
 //rebuild
+
+// Constructor
+FBullCowGame::FBullCowGame() {
+	Reset();
+}
+
 void FBullCowGame::Reset()
 {
+	MyCurrentTry = 1; // Run time values override compile time vals
+	
+	constexpr int MAX_TRIES = 9;
+	MyMaxTries = MAX_TRIES;
 	return;
 }
 
