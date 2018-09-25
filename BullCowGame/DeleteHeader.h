@@ -1,12 +1,11 @@
 #pragma once
-#pragma once
 #include <string>
 // rebuild
 
 class FBullCowGame
 {
 public:
-	void Reset(); // TODO return rich return value create definition file
+	//void Reset(); // TODO return rich return value create definition file
 	int GetMaxTries();
 	int GetCurrentTry();
 	bool IsGameWon();

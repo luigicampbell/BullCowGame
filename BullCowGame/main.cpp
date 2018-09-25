@@ -42,7 +42,7 @@ void PlayGame()
 	FBullCowGame BCGame;
 	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
 							
-	for (int count = 1; count <= 5; count++)
+	for (int count = 1; count <= MaxTries; count++)
 	{
 		std::string Guess = GetGuess();
 		std::cout << "________________________________\n";
