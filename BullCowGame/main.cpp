@@ -10,7 +10,7 @@ std::string GetGuess();
 bool PlayAgain();
 
 // Application starting point
-
+FBullCowGame BCGame; // instantiating game in global scope
 int main()//something
 {
 	bool bPlayAgain = false;
@@ -39,7 +39,6 @@ void PrintIntro()
 void PlayGame()
 {
 	// Implementation of the game
-	FBullCowGame BCGame;
 	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
 							
 	for (int count = 1; count <= MaxTries; count++)
@@ -57,7 +56,11 @@ void PlayGame()
 // Implementation of get player guess
 std::string GetGuess()
 {
-	std::cout << "Enter your guess: ";
+	int MyCurrentTry = BCGame.GetCurrentTry();
+	std::cout 
+		<< "Try "
+		<< MyCurrentTry
+		<< ", Enter your guess: ";
 	std::string Guess = "";
 	std::getline(std::cin, Guess);
 	return Guess;
