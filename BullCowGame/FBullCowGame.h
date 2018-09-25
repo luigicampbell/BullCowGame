@@ -6,10 +6,12 @@
 class FBullCowGame
 {
 public:
+	// Getters
+	int GetMaxTries() const;
+	int GetCurrentTry() const;
+	bool IsGameWon() const;
+
 	void Reset(); // TODO return rich return value create definition file
-	int GetMaxTries();
-	int GetCurrentTry();
-	bool IsGameWon();
 	bool CheckGuessValidity(std::string);
 
 private:
