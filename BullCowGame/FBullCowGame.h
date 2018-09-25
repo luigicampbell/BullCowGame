@@ -13,7 +13,7 @@ public:
 	bool CheckGuessValidity(std::string);
 
 private:
-	int MyCurrentTry = 0;
+	int MyCurrentTry = 1;
 	int MyMaxTries = 5;
 };
 // something
