@@ -1,6 +1,7 @@
 #include "FBullCowGame.h"
 //rebuild
 using int32 = int;
+using FString = std::string;
 // Constructor
 FBullCowGame::FBullCowGame() {
 	Reset();
@@ -45,14 +46,15 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	// set up a return variable
 	FBullCowCount BullCowCount;
 	// loop through all letters in the guess
-	//int32 HiddenWordLength = MyHiddenWord.length();
-	for (int32& i : MyHiddenWord.length)
-	{// compare letters against hidden word
-		for (int32& j : Guess.length)
+	int32 HiddenWordLength = MyHiddenWord.length();
+	int32 GuessLength = Guess.length();
+	for (int32 HChar = 0; HChar < HiddenWordLength; HChar++)
+	{ // compare letters against hidden word
+		for (int32 GChar = 0; GChar < GuessLength; GChar++)
 		{
-			if (Guess[i] == MyHiddenWord[i])
+			if (Guess[GChar] == MyHiddenWord[HChar])
 			{
-				(i == j) == true ? BullCowCount.Bulls++ : BullCowCount.Cows++;
+				(HChar == GChar) == true ? BullCowCount.Bulls++ : BullCowCount.Cows++;
 			}
 		}
 	}
