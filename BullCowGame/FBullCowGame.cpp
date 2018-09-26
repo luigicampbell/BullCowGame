@@ -12,6 +12,9 @@ void FBullCowGame::Reset()
 	
 	constexpr int32 MAX_TRIES = 9;
 	MyMaxTries = MAX_TRIES;
+
+	const FString HIDDEN_WORD = "futtle buckery";
+	MyHiddenWord = HIDDEN_WORD;
 	return;
 }
 
@@ -35,13 +38,19 @@ bool FBullCowGame::CheckGuessValidity(FString)
 	return false;
 }
 // receives a valid guess and increments turn and returns count
-BullCowCount FBullCowGame::SubmitGuess(FString)
+FBullCowCount FBullCowGame::SubmitGuess(FString)
 {
 	// increment the turn number
 	MyCurrentTry++;
 	// set up a return variable
-	BullCowCount BullCowCount;
+	FBullCowCount BullCowCount;
 	// loop through all letters in the guess
-		// compare letters against hidden word
+	//int32 HiddenWordLength = MyHiddenWord.length();
+	for (char& i : MyHiddenWord)
+	{// compare letters against hidden word
+			// if they match
+				// increment bulls if in same place
+				// increment cows if they are not
+	}
 	return BullCowCount;
 }
