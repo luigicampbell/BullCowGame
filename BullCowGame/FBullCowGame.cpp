@@ -29,12 +29,17 @@ int32 FBullCowGame::GetCurrentTry() const
 	return MyCurrentTry;
 }
 
+int32 FBullCowGame::GetHiddenWordLength() const
+{
+	return MyHiddenWord.length();
+}
+
 bool FBullCowGame::IsGameWon() const
 {
 	return false;
 }
 
-bool FBullCowGame::CheckGuessValidity(FString)
+bool FBullCowGame::CheckGuessValidity(FString) const
 {
 	return false;
 }
@@ -48,6 +53,7 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	// loop through all letters in the guess
 	int32 HiddenWordLength = MyHiddenWord.length();
 	// int32 GuessLength = Guess.length();
+	// O(n^2)
 	for (int32 HChar = 0; HChar < HiddenWordLength; HChar++)
 	{ // compare letters against hidden word
 		for (int32 GChar = 0; GChar < HiddenWordLength; GChar++)

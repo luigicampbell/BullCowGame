@@ -19,10 +19,13 @@ public:
 	// Getters
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
+	int32 GetHiddenWordLength() const;
+
 	bool IsGameWon() const;
+	bool CheckGuessValidity(FString) const;
 
 	void Reset(); // TODO return rich return value create definition file
-	bool CheckGuessValidity(FString);
+	
 	// counts bulls and cows and increases tries
 	FBullCowCount SubmitGuess(FString);
 
