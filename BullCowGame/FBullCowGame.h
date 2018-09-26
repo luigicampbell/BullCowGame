@@ -1,7 +1,7 @@
 #pragma once
 #pragma once
 #include <string>
-// rebuild
+
 using FString = std::string; // More compatible with unreal
 using int32 = int;
 
@@ -9,6 +9,14 @@ struct FBullCowCount
 {
 	int32 Bulls = 0;
 	int32 Cows = 0;
+};
+
+enum class EWordStatus
+{
+	Ok,
+	Not_Isogram,
+	Wrong_Length,
+	Not_Lowercase
 };
 
 class FBullCowGame
@@ -22,9 +30,9 @@ public:
 	int32 GetHiddenWordLength() const;
 
 	bool IsGameWon() const;
-	bool CheckGuessValidity(FString) const;
+	EWordStatus CheckGuessValidity(FString) const;
 
-	void Reset(); // TODO return rich return value create definition file
+	void Reset(); 
 	
 	// counts bulls and cows and increases tries
 	FBullCowCount SubmitGuess(FString);
@@ -34,4 +42,4 @@ private:
 	int32 MyMaxTries;
 	FString MyHiddenWord;
 };
-// something
+
