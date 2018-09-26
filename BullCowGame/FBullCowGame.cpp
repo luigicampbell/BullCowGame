@@ -14,7 +14,7 @@ void FBullCowGame::Reset()
 	constexpr int32 MAX_TRIES = 9;
 	MyMaxTries = MAX_TRIES;
 
-	const FString HIDDEN_WORD = "futtle buckery";
+	const FString HIDDEN_WORD = "abc";
 	MyHiddenWord = HIDDEN_WORD;
 	return;
 }
@@ -47,10 +47,10 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	FBullCowCount BullCowCount;
 	// loop through all letters in the guess
 	int32 HiddenWordLength = MyHiddenWord.length();
-	int32 GuessLength = Guess.length();
+	// int32 GuessLength = Guess.length();
 	for (int32 HChar = 0; HChar < HiddenWordLength; HChar++)
 	{ // compare letters against hidden word
-		for (int32 GChar = 0; GChar < GuessLength; GChar++)
+		for (int32 GChar = 0; GChar < HiddenWordLength; GChar++)
 		{
 			if (Guess[GChar] == MyHiddenWord[HChar])
 			{

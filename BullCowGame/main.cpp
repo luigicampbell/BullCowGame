@@ -58,7 +58,7 @@ void PlayGame()
 		std::cout
 			<< "Bulls: "
 			<< BullCowCount.Bulls
-			<< "| Cows: "
+			<< " | Cows: "
 			<< BullCowCount.Cows
 			<< std::endl;
 
