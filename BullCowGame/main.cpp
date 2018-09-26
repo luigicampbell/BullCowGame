@@ -3,10 +3,11 @@
 #include "FBullCowGame.h"
 
 // using namespace std; best practices?
+using FText = std::string;
 
 void PrintIntro();
 void PlayGame();
-std::string GetGuess();
+FText GetGuess();
 bool PlayAgain();
 
 // Application starting point
@@ -41,10 +42,10 @@ void PlayGame()
 	// Implementation of the game
 	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
-							
+	// TODO Refactor to use while loop						
 	for (int count = 1; count <= MaxTries; count++)
 	{
-		std::string Guess = GetGuess();
+		FText Guess = GetGuess();
 		std::cout << "________________________________\n";
 		std::cout
 			<< "You guessed: "
@@ -55,14 +56,14 @@ void PlayGame()
 }
 
 // Implementation of get player guess
-std::string GetGuess()
+FText GetGuess()
 {
 	int MyCurrentTry = BCGame.GetCurrentTry();
 	std::cout 
 		<< "Try "
 		<< MyCurrentTry
 		<< ", Enter your guess: ";
-	std::string Guess = "";
+	FText Guess = "";
 	std::getline(std::cin, Guess);
 	return Guess;
 }
@@ -70,7 +71,7 @@ std::string GetGuess()
 bool PlayAgain()
 {
 	std::cout << "Enter 'Y' for Yes or press any other key to quit... ";
-	std::string Choice = "";
+	FText Choice = "";
 	std::getline(std::cin, Choice);
 	return (Choice[0] == 'y' || Choice[0] == 'Y') == true ? true : false;
 }
