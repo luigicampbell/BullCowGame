@@ -1,6 +1,6 @@
 #include "FBullCowGame.h"
 //rebuild
-
+using int32 = int;
 // Constructor
 FBullCowGame::FBullCowGame() {
 	Reset();
@@ -10,17 +10,17 @@ void FBullCowGame::Reset()
 {
 	MyCurrentTry = 1; // Run time values override compile time vals
 	
-	constexpr int MAX_TRIES = 9;
+	constexpr int32 MAX_TRIES = 9;
 	MyMaxTries = MAX_TRIES;
 	return;
 }
 
-int FBullCowGame::GetMaxTries() const
+int32 FBullCowGame::GetMaxTries() const
 {
 	return MyMaxTries;
 }
 
-int FBullCowGame::GetCurrentTry() const
+int32 FBullCowGame::GetCurrentTry() const
 {
 	return MyCurrentTry;
 }
@@ -30,7 +30,7 @@ bool FBullCowGame::IsGameWon() const
 	return false;
 }
 
-bool FBullCowGame::CheckGuessValidity(std::string)
+bool FBullCowGame::CheckGuessValidity(FString)
 {
 	return false;
 }

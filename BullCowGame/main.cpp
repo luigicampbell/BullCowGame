@@ -1,9 +1,16 @@
+/*
+ * This is the console executable that uses BullCow Class
+ * Acts as the view in a MVC pattern and is responsible for all user interaction.
+ * Game logic in FullBullCow GameClass
+ */
+
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
 // using namespace std; best practices?
-using FText = std::string;
+using FText = std::string; //mainly for user interaction
+using int32 = int;
 
 void PrintIntro();
 void PlayGame();
@@ -41,9 +48,9 @@ void PlayGame()
 {
 	// Implementation of the game
 	BCGame.Reset();
-	int MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
+	int32 MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
 	// TODO Refactor to use while loop						
-	for (int count = 1; count <= MaxTries; count++)
+	for (int32 count = 1; count <= MaxTries; count++)
 	{
 		FText Guess = GetGuess();
 		std::cout << "________________________________\n";
@@ -58,7 +65,7 @@ void PlayGame()
 // Implementation of get player guess
 FText GetGuess()
 {
-	int MyCurrentTry = BCGame.GetCurrentTry();
+	int32 MyCurrentTry = BCGame.GetCurrentTry();
 	std::cout 
 		<< "Try "
 		<< MyCurrentTry

@@ -2,22 +2,23 @@
 #pragma once
 #include <string>
 // rebuild
-
+using FString = std::string; // More compatible with unreal
+using int32 = int;
 class FBullCowGame
 {
 public:
 	// no arg constructor
 	FBullCowGame(); //
 	// Getters
-	int GetMaxTries() const;
-	int GetCurrentTry() const;
+	int32 GetMaxTries() const;
+	int32 GetCurrentTry() const;
 	bool IsGameWon() const;
 
 	void Reset(); // TODO return rich return value create definition file
-	bool CheckGuessValidity(std::string);
+	bool CheckGuessValidity(FString);
 
 private:
-	int MyCurrentTry;
-	int MyMaxTries;
+	int32 MyCurrentTry;
+	int32 MyMaxTries;
 };
 // something
