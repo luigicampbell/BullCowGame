@@ -63,6 +63,7 @@ void PlayGame()
 			<< std::endl;
 
 		std::cout
+			<< std::endl
 			<< "________________________________\n"
 			<< "You guessed: "
 			<< Guess
