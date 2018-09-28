@@ -54,7 +54,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}	
 	
 	// if guess isn't right length 
-	else if (false)
+	else if (GetHiddenWordLength() != Guess.length())
 	{
 		return EGuessStatus::Wrong_Length;
 	}
