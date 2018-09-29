@@ -50,7 +50,7 @@ void PlayGame()
 	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries(); // Access class method and privately visible members
 	// TODO Refactor to use while loop						
-	for (int32 count = 1; count <= MaxTries; count++)
+	while(!BCGame.GetIsGameWon() && BCGame.GetCurrentTry() <= MaxTries)
 	{
 		FText Guess = GetValidGuess();
 
