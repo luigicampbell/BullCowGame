@@ -13,6 +13,7 @@ using FText = std::string; //mainly for user interaction
 using int32 = int;
 
 void PrintIntro();
+void PrintGameSummary();
 void PlayGame();
 FText GetValidGuess();
 bool PlayAgain();
@@ -37,11 +38,17 @@ void PrintIntro()
 {
 	int32 WORD_LENGTH = BCGame.GetHiddenWordLength();
 	std::cout
+		<< "\n\n"
 		<< "Welcome to Bulls and Cows, a fun word game.\n"
 		<< "Try to guess the "
 		<< WORD_LENGTH
 		<< " letter isogram!\n";
 	return;
+}
+
+void PrintGameSummary()
+{
+	BCGame.GetIsGameWon() ? std::cout << "\nYou Win!\n" : std::cout << "\nYou lose...\n";
 }
 
 void PlayGame()
@@ -71,6 +78,8 @@ void PlayGame()
 			<< Guess
 			<< std::endl;
 	}
+	PrintGameSummary();
+
 	return;
 }
 
