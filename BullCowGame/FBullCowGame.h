@@ -1,6 +1,8 @@
 #pragma once
 #pragma once
 #include <string>
+#include <map>
+#define TMap std::map
 
 using FString = std::string; // More compatible with unreal
 using int32 = int;
