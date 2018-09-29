@@ -83,5 +83,6 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 			}
 		}
 	}
+	(BullCowCount.Bulls == WordLength) == true ? bIsGameWon = true : bIsGameWon = false;
 	return BullCowCount;
 }
