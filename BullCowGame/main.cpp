@@ -38,7 +38,6 @@ void PrintIntro()
 {
 	int32 WORD_LENGTH = BCGame.GetHiddenWordLength();
 	std::cout
-		<< "\n\n"
 		<< "Welcome to Bulls and Cows, a fun word game.\n"
 		<< "Try to guess the "
 		<< WORD_LENGTH
@@ -68,8 +67,7 @@ void PlayGame()
 			<< "Bulls: "
 			<< BullCowCount.Bulls
 			<< " | Cows: "
-			<< BullCowCount.Cows
-			<< std::endl;
+			<< BullCowCount.Cows;
 
 		std::cout
 			<< std::endl
@@ -94,6 +92,7 @@ FText GetValidGuess()
 		int32 MyCurrentTry = BCGame.GetCurrentTry();
 
 		std::cout
+			<< std::endl
 			<< "Try "
 			<< MyCurrentTry
 			<< ", Enter your guess: ";
@@ -107,20 +106,20 @@ FText GetValidGuess()
 			std::cout
 				<< "Please enter a "
 				<< BCGame.GetHiddenWordLength()
-				<< " letter word.\n";
+				<< " letter word.\n\n";
 			break;
 		case EGuessStatus::Not_Isogram:
 			std::cout
-				<< "Please enter a word with no repeating letters.\n";
+				<< "Please enter a word with no repeating letters.\n\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
 			std::cout
-				<< "Letters must be lowercase.\n";
+				<< "Letters must be lowercase.\n\n";
 			break;
 		default:
 			break;
 		}
-		std::cout << std::endl;
+
 	} while (Status != EGuessStatus::Ok);
 	return Guess;
 }

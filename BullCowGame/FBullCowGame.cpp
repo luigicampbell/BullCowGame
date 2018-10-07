@@ -116,5 +116,5 @@ bool FBullCowGame::IsLowercase(FString Word) const
 			return false;
 		}
 	}
-	return false;
+	return true;
 }
