@@ -115,7 +115,7 @@ FText GetValidGuess()
 			break;
 		case EGuessStatus::Not_Lowercase:
 			std::cout
-				<< "Letters must be lowercase./n";
+				<< "Letters must be lowercase.\n";
 			break;
 		default:
 			break;

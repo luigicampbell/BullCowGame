@@ -47,7 +47,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}	
 
 	// if guess isn't lowercase
-	else if (false)
+	else if (!IsLowercase(Guess))
 	{
 		return EGuessStatus::Not_Lowercase;
 	}	
@@ -105,4 +105,16 @@ bool FBullCowGame::IsIsogram(FString Word) const
 		}
 	}
 	return true;
+}
+
+bool FBullCowGame::IsLowercase(FString Word) const
+{
+	for (auto Letter : Word)
+	{
+		if (!islower(Letter))
+		{
+			return false;
+		}
+	}
+	return false;
 }
