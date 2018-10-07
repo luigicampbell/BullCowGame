@@ -95,6 +95,8 @@ FText GetValidGuess()
 			<< std::endl
 			<< "Try "
 			<< MyCurrentTry
+			<< " out of "
+			<< BCGame.GetMaxTries()
 			<< ", Enter your guess: ";
 
 		std::getline(std::cin, Guess);
