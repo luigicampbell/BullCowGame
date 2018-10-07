@@ -41,7 +41,7 @@ bool FBullCowGame::GetIsGameWon() const
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
 	// if the guess isn't an isogram
-	if (!bIsIsogram(Guess))
+	if (!IsIsogram(Guess))
 	{
 		return EGuessStatus::Not_Isogram;
 	}	
@@ -87,7 +87,7 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	return BullCowCount;
 }
 
-bool FBullCowGame::bIsIsogram(FString Word) const
+bool FBullCowGame::IsIsogram(FString Word) const
 {
 	if (Word.length() <= 1) { return true; }
 	TMap<char, bool> LetterSeen;
