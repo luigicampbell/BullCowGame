@@ -41,7 +41,7 @@ bool FBullCowGame::GetIsGameWon() const
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
 	// if the guess isn't an isogram
-	if (false)
+	if (!bIsIsogram(Guess))
 	{
 		return EGuessStatus::Not_Isogram;
 	}	
@@ -85,4 +85,24 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	}
 	(BullCowCount.Bulls == WordLength) == true ? bIsGameWon = true : bIsGameWon = false;
 	return BullCowCount;
+}
+
+bool FBullCowGame::bIsIsogram(FString Word) const
+{
+	if (Word.length() <= 1) { return true; }
+	TMap<char, bool> LetterSeen;
+	// compiler decides type of iterator
+	for (auto Letter : Word)
+	{
+		Letter = tolower(Letter);
+		if (LetterSeen[Letter]) 
+		{ 
+			return false;
+		}
+		else
+		{
+			LetterSeen[Letter] = true;
+		}
+	}
+	return true;
 }
