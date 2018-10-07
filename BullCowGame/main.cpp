@@ -39,6 +39,9 @@ void PrintIntro()
 	int32 WORD_LENGTH = BCGame.GetHiddenWordLength();
 	std::cout
 		<< "Welcome to Bulls and Cows, a fun word game.\n"
+		<< "{        ]\n"
+		<< "O\\     /0'\n"
+		<< "  B   8    \n"
 		<< "Try to guess the "
 		<< WORD_LENGTH
 		<< " letter isogram!\n";

@@ -1,4 +1,6 @@
 #include "FBullCowGame.h"
+#include <map>
+#define TMap std::map
 //rebuild
 using int32 = int;
 // Constructor
@@ -11,7 +13,7 @@ void FBullCowGame::Reset()
 	MyCurrentTry = 1; // Run time values override compile time vals
 	bIsGameWon = false;
 	constexpr int32 MAX_TRIES = 9;
-	MyMaxTries = MAX_TRIES;
+	//MyMaxTries = MAX_TRIES;
 
 	const FString HIDDEN_WORD = "abc";
 	MyHiddenWord = HIDDEN_WORD;
@@ -20,7 +22,14 @@ void FBullCowGame::Reset()
 
 int32 FBullCowGame::GetMaxTries() const
 {
-	return MyMaxTries;
+	TMap<int32, int32> WordLengthToMaxTries
+	{
+		{3, 4},
+		{4, 7},
+		{5, 10},
+		{6, 13}
+	};
+	return WordLengthToMaxTries[MyHiddenWord.length()];
 }
 
 int32 FBullCowGame::GetCurrentTry() const
