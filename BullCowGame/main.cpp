@@ -3,6 +3,7 @@
  * Acts as the view in a MVC pattern and is responsible for all user interaction.
  * Game logic in FullBullCow GameClass
  */
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -12,6 +13,7 @@
 using FText = std::string; //mainly for user interaction
 using int32 = int;
 
+// prototyping for in class
 void PrintIntro();
 void PrintGameSummary();
 void PlayGame();
@@ -33,7 +35,6 @@ int main()//something
 	return 0; // exit application
 }
 
-// Implementation of introduce game
 void PrintIntro()
 {
 	int32 WORD_LENGTH = BCGame.GetHiddenWordLength();

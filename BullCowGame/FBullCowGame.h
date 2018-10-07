@@ -1,8 +1,7 @@
-#pragma once
+/* Game logic (no view or user interaction) */
+
 #pragma once
 #include <string>
-#include <map>
-#define TMap std::map
 
 using FString = std::string; // More compatible with unreal
 using int32 = int;
@@ -26,7 +25,7 @@ class FBullCowGame
 {
 public:
 	// no arg constructor
-	FBullCowGame(); //
+	FBullCowGame(); 
 	// Getters
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
@@ -48,4 +47,3 @@ private:
 	bool IsIsogram(FString) const;
 	bool IsLowercase(FString) const;
 };
-
